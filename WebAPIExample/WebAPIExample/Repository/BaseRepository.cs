@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using WebAPIExample.Models;
@@ -52,7 +53,11 @@ namespace WebAPIExample.BaseRepository
         public static List<T> ReturnList()
         {
             try { return db.Set<T>().ToList(); }
-            catch { return null; }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
         }
 
     }

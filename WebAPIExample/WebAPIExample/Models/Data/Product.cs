@@ -12,6 +12,6 @@ namespace WebAPIExample.Models.Data
 
         public string Name { get; set; }
 
-        public double PricePerUnit { get; set; }
+        public decimal PricePerUnit { get; set; }
     }
 }

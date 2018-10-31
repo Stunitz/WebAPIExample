@@ -24,6 +24,6 @@ namespace WebAPIExample.Models.Data
         public DateTime DatePurchase { get; set; }
 
         [Column("pricePerUnity")]
-        public double PricePerUnity { get; set; }
+        public decimal PricePerUnity { get; set; }
     }
 }

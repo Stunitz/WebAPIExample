@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebAPIExample.ActionFilters;
 using WebAPIExample.BaseRepository;
 using WebAPIExample.Models.Data;
 
@@ -16,10 +17,12 @@ namespace WebAPIExample.Controllers
 
         // GET WebAPIExample/Customers
         [Route("Customers")]
+        [Pagination(typeof(IEnumerable<Customer>))]
         public IEnumerable<Customer> GetCustomers() => BaseRepository<Customer>.ReturnList();
 
         // GET WebAPIExample/Products
         [Route("Products")]
+        [Pagination(typeof(IEnumerable<Product>))]
         public IEnumerable<Product> GetProducts() => BaseRepository<Product>.ReturnList();
 
 
