@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
@@ -17,13 +14,15 @@ namespace WebAPIExample.ActionFilters
 {
     public class PaginationAttribute : ActionFilterAttribute, IActionFilter
     {
+        /* 
+         * Headers Example
+         * x-sort-param: <nome do atributo>
+         * x-sort-direction: <desc> ou <asc> 
+         * x-page-start:10
+         * x-page-size: 25
+         */
+
         private readonly string[] paginationHeaders = new string[] { "x-sort-param", "x-sort-direction", "x-page-start", "x-page-size" };
-            /* Headers Example
-             * x-sort-param: <nome do atributo>
-             * x-sort-direction: <desc> ou <asc> 
-             * x-page-start:10
-             * x-page-size: 25
-             */
 
         private string SortParam { get; set; }
         private string SortDirection { get; set; }
@@ -117,5 +116,4 @@ namespace WebAPIExample.ActionFilters
             #endregion
         }
     }
-    
 }

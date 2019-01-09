@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
+using WebAPIExample.Filters.Global;
 
 namespace WebAPIExample
 {
@@ -12,6 +14,12 @@ namespace WebAPIExample
         {
             // Web API configuration and services
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            // Web API filters
+            config.Filters.Add(new NotImplementedFilterAttribute());
+
+            config.Services.Replace(typeof(IExceptionLogger), new GlobalExceptionLogger());
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

@@ -1,0 +1,7 @@
+
+2019-01-09 15:28:56.4900|INFO|WebAPIExample.Filters.Global.GlobalExceptionLogger|Error Message: THIS IS A TEST ERROR!
+
+2019-01-09 15:32:06.1274|INFO|WebAPIExample.Filters.Global.GlobalExceptionLogger|Error Message: THIS IS A TEST ERROR!
+
+2019-01-09 15:32:50.3513|INFO|WebAPIExample.Filters.Global.GlobalExceptionLogger|Error Message: THIS IS A TEST ERROR!
+

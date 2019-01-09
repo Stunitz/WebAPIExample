@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using WebAPIExample.Models.Data;
+using System.Collections.Generic;
 using WebAPIExample.ActionFilters;
 using WebAPIExample.BaseRepository;
-using WebAPIExample.Models.Data;
+using System.Diagnostics;
 
 namespace WebAPIExample.Controllers
 {
@@ -30,9 +28,17 @@ namespace WebAPIExample.Controllers
         [Route("CustomerId/{customerId}")]
         public Customer GetCustomerId(int customerId) => BaseRepository<Customer>.Search(customerId);
 
+
+
         // GET: WebAPIExample/ProductId/1
         [Route("ProductId/{productId}")]
         public Product GetProductId(int productId) => BaseRepository<Product>.Search(productId);
+
+        [Route("Error")]
+        public void GetError()
+        {
+            throw new Exception("THIS IS A TEST ERROR!");
+        }
 
         #endregion
 
